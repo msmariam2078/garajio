@@ -1,0 +1,48 @@
+<style>
+    .custom {
+        width: 700px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+</style>
+<script></script>
+
+<div class="modal fade" id="insgroupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content custom">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Inspection group</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ms-5">
+
+                <form method="POST" action="{{ route('inspection.groupstore') }}" accept-charset="UTF-8"
+                    enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="form-group">
+                        <label for="name" class='mb-3'>Group code</label>
+                        <input type="text" class="form-control" id="code" name="code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class='mb-3'>Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter group description"
+                            required></textarea>
+                    </div>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
